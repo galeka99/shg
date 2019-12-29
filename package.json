@@ -1,0 +1,28 @@
+{
+  "name": "shg",
+  "version": "0.0.1",
+  "description": "Simple Hash Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/galeka99/shg"
+  },
+  "keywords": [
+    "crypto",
+    "hash",
+    "encrypt",
+    "decrypt",
+    "md5",
+    "sha1",
+    "sha256"
+  ],
+  "author": "Galang Ekayudha Permana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/galeka99/shg/issues"
+  },
+  "homepage": "https://github.com/galeka99/shg#readme"
+}
