@@ -9,8 +9,8 @@ module.exports = (string, secret) => {
     return;
   }
 
-  const algorithm = "aes-512-cbc";
-  const password = crypto.scryptSync(secret, '332c9159404b700a', 64);
+  const algorithm = "aes-256-cbc";
+  const password = crypto.scryptSync(secret, '332c9159404b700a', 32);
   const iv = Buffer.alloc(16, 0);
 
   const cipher = crypto.createCipheriv(algorithm, password, iv);
