@@ -1,8 +1,13 @@
 const crypto = require('crypto');
 
-module.exports = (string, secret) => {
-  if (string == null || string == undefined) {
-    console.log("Decrypt error: Parameter \'string\' is required!");
+/**
+ * @param {string} text Encrypted text
+ * @param {string} secret Secret key that you used when you encrypt the plain text
+ * @return {string} Return an decrypted text
+ */
+module.exports = (text, secret) => {
+  if (text == null || text == undefined) {
+    console.log("Decrypt error: Parameter \'text\' is required!");
     return;
   } else if (secret == null || secret == undefined) {
     console.log("Decrypt error: Parameter \'secret\' is required!");
@@ -11,11 +16,11 @@ module.exports = (string, secret) => {
 
   try {
     const algorithm = "aes-256-cbc";
-    const password = crypto.scryptSync(secret, '332c9159404b700a', 32);
+    const password = crypto.scryptSync(secret, 'galang', 32);
     const iv = Buffer.alloc(16, 0);
   
-    const decipher = crypto.createDecipheriv(algorithm, password, iv);
-    let decrypted = decipher.update(string, "hex", "utf8");
+    const decipher = crypto.createDecipheriv(algorithm, Buffer.from(password), iv);
+    let decrypted = decipher.update(text, "hex", "utf8");
     decrypted += decipher.final("utf8");
     return decrypted;
   } catch (e) {

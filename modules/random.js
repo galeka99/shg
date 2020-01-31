@@ -1,11 +1,19 @@
 const crypto = require('crypto');
 
+/**
+ * @param {number} length Number of character generated
+ * @return {string}
+ */
 exports.hex = (length) => {
   const len = parseInt(length);
   const random = crypto.randomBytes(len).toString("hex");
   return random.slice(0, len);
 }
 
+/**
+ * @param {number} length Number of character generated
+ * @return {number}
+ */
 exports.number = (length) => {
   let random = 0;
   let multiplier = "10";
