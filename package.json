@@ -1,6 +1,6 @@
 {
   "name": "shg",
-  "version": "^0.1.0",
+  "version": "0.1.0",
   "description": "Simple Hash Generator",
   "main": "index.js",
   "repository": {
