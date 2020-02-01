@@ -15,7 +15,7 @@ module.exports = (text, secret) => {
   }
 
   const algorithm = "aes-256-cbc";
-  const password = crypto.scryptSync(secret, 'galang', 32);
+  const password = crypto.scryptSync(secret, secret, 32);
   const iv = Buffer.alloc(16, 0);
 
   const cipher = crypto.createCipheriv(algorithm, Buffer.from(password), iv);
